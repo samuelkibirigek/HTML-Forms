@@ -7,12 +7,12 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/login", methods=["POST"])
+@app.route("/logins", methods=["POST"])
 def receive_data():
-    if request.method == 'POST':
-        name = request.form['username']
-        passwd = request.form['password']
-        return render_template("login.html", username=name, password=passwd)
+    name = request.form['username']
+    passwd = request.form['password']
+    return f"<h1>Name: {name}, Password: {passwd}</h1>"
+    # return render_template("login.html", username=name, password=passwd)
 
 
 if __name__ == "__main__":
